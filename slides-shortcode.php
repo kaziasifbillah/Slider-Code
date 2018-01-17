@@ -2,6 +2,8 @@
 function asif_slides_shortcode($atts){
         extract( shortcode_atts( array(
         'count' => 3,
+        'slider_id' => '',
+        'height' => '730',
         'loop' => 'true',
         'autoplay' => 'true',
         'autoplayTimeout' => 5000,
@@ -9,26 +11,33 @@ function asif_slides_shortcode($atts){
         'dots' => 'true',
     ), $atts) );
      
-    $q = new WP_Query(
-        array(
-            'posts_per_page' => $count, 
-            'post_type' => 'slide',)
-        );    
+    if( $count == 1) {
+        $q = new WP_Query( array( 'posts_per_page' => $count, 'post_type' => 'slide', "p" => $slider_id));
+    } else {
+        $q = new WP_Query( array( 'posts_per_page' => $count, 'post_type' => 'slide'));
+    }   
          
-    $list = '
-    <script>
-        jQuery(window).load(function(){
-            jQuery(".asif-slides").owlCarousel({
-                items: 1,
-                loop: '.$loop.',
-                autoplay: '.$autoplay.',
-                autoplayTimeout: '.$autoplayTimeout.',
-                nav: '.$nav.',
-                dots: '.$dots.',
-                navText: ["<i class=\'fa fa-angle-left\'></i>", "<i class=\'fa fa-angle-right\'></i>"]
+   if( $count == 1 ) {
+        $list = '';
+    } else {        
+        $list = '
+        <script>
+            jQuery(window).load(function(){
+                jQuery(".asif-slides").owlCarousel({
+                    items: 1,
+                    loop: '.$loop.',
+                    autoplay: '.$autoplay.',
+                    autoplayTimeout: '.$autoplayTimeout.',
+                    nav: '.$nav.',
+                    dots: '.$dots.',
+                    navText: ["<i class=\'fa fa-angle-left\'></i>", "<i class=\'fa fa-angle-right\'></i>"]
+                });
             });
-        });
-    </script>
+        </script>';
+    }
+	
+	
+    $list .='
     <div class="asif-slides">';
     while($q->have_posts()) : $q->the_post();
         $idd = get_the_ID();
@@ -56,7 +65,7 @@ function asif_slides_shortcode($atts){
 		
         $post_content = get_the_content();
         $list .= '
-        <div style="background-image:url('.get_the_post_thumbnail_url($idd, 'large').')" class="asif-slide-item">';
+        <div style="background-image:url('.get_the_post_thumbnail_url($idd, 'large').'); height'.$height.'px" class="asif-slide-item">';
 		
 		if($enable_overlay = true) {
             $list .= '<div style="opacity:'.$overlay_percentage.'; background-color:'.$overlay_color.';" class="slide-overlay"></div>';
