@@ -1,0 +1,185 @@
+.asif-slide-item {
+	background-position: center center;
+	height: 730px;
+	background: #ddd;
+	color: #fff;
+	position: relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index: 2;
+	font-size: 20px;
+	line-height: 31px;
+}
+
+.owl-stage-outer {
+	overflow: hidden;
+}
+
+.asif-slide-table {
+	display: table;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	z-index: 2;
+}
+
+.asif-slide-tablecell {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.owl-item {
+	float: left;
+}
+
+.slide-overlay {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 0;
+	top: 0;
+	left: 0;
+}
+
+.asif-slide-item h2 {
+	font-size: 50px;
+	margin-bottom: 40px;
+}
+
+.asif-slides .owl-nav div {
+	position: absolute;
+	border-radius: 50%;
+	top: 50%;
+	text-align: center;
+	z-index: 1;
+	left: 30px;
+	cursor: pointer;
+	height: 60px;
+	width: 60px;
+	color: #000;
+	font-size: 30px;
+	line-height: 60px;
+	opacity: 0;
+	visibility: hidden;
+	transition: .3s;
+}
+
+.slide-overlay .owl-nav div {
+	position: absolute;
+	background: #fff;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	opacity: .7;
+}
+
+.asif-slides .owl-nav div.owl-next {
+	left: auto;
+	right: 30px;
+}
+
+.asif-slides .owl-nav div i {
+	background: #fff;
+	margin: 5px;
+	width: 50px;
+	height: 50px;
+	display: block;
+	line-height: 50px;
+	border-radius: 50%;
+}
+
+.asif-slides:hover .owl-nav div {
+	opacity: 1;
+	visibility: visible;
+}
+
+.asif-slides .owl-nav div:hover i.fa {
+	background: #1e8bc3;
+	color: #fff;
+}
+
+.asif_slide_button {
+	margin-top: 30px;
+}
+
+.asif_slide_button a {
+	color: #fff;
+	position: relative;
+}
+
+.borderdbtn:after {
+	position: absolute;
+	height: 8px;
+	width: 46%;
+	background: #fef14a;
+	content: '';
+	bottom: 0;
+	left: 0;
+	transition: .3s;
+}
+
+.borderdbtn {
+	padding-bottom: 18px;
+}
+
+.borderdbtn:hover:after {
+	width: 100%;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+
+.asif-logo-carousel .owl-dots div {
+	height: 5px;
+	width: 40px;
+	background: #ddd;
+	cursor: pointer;
+	display: inline-block;
+	margin: 5px;
+}
+
+.asif-logo-carousel .owl-dots {
+	text-align: center;
+}
+
+.asif-logo-carousel .owl-dots div.active {
+	background: #fff334;
+}
+
+.asif-logo-carousel .owl-nav div {
+	font-size: 30px;
+	line-height: 50px;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -8px;
+	opacity: .6;
+	cursor: pointer;
+}
+
+.asif-logo-carousel .owl-nav .owl-next {
+	left: auto;
+	right: 0;
+}
+
+.asif-logo-carousel {
+	padding-left: 30px;
+	padding-right: 30px;
+	text-align: center;
+}
+
+.asif-logo-item-table {
+	display: table;
+	height: 60px;
+	width: 100%;
+}
+
+.asif-logo-item-tablecell {
+	display: table-cell;
+	vertical-align: middle;
+}
