@@ -13,15 +13,23 @@ vc_map( array(
          ),
          array(
             "type" => "dropdown",
-            "heading" => __( "Seclect Slide?", "my-text-domain" ),
+            "heading" => __( "Select Slide?", "my-text-domain" ),
             "param_name" => "slider_id",
-            "std" => __( "true", "my-text-domain" ),
-            "value" => array (
-                'yes' => 'true',
-                'no' => 'false',
-				),
-				"description" => __( "", "my-text-domain" )
-            ),
+            "value" => asif_toolkit_get_slide_as_list(),
+			"description" => __( "", "my-text-domain" ),
+			"dependency" => array (
+                'element' => "count",
+                'value' => array("1")
+            )
+         ),
+			 
+		 array( 
+				"type" => "textfield",
+				"heading" => __( "Slider Height", "my-text-domain" ),
+				"param_name" => "height",
+				"std" => __( "730", "my-text-domain" ),
+				"description" => __( "Type slider height in px. Numbers only", "my-text-domain" )
+         ),
 			 
 		 array( 
 				"type" => "dropdown", 
@@ -32,7 +40,11 @@ vc_map( array(
 				'yes' => 'true',
 				'no' => 'false'
 				),
-            	"description" => __( "", "my-text-domain" )
+            	"description" => __( "", "my-text-domain" ),
+            	"dependency" => array (
+                'element' => "count",
+                'value' => array("2","3","4","5","6","7","8","9","10","11","12","13","14","15"),
+            )
          ),
          array(
             "type" => "dropdown",
@@ -43,7 +55,11 @@ vc_map( array(
                 'yes' => 'true',
                 'no' => 'false'
             ),
-            "description" => __( "", "my-text-domain" )
+            "description" => __( "", "my-text-domain" ),
+			"dependency" => array (
+            'element' => "count",
+            'value' => array("2","3","4","5","6","7","8","9","10","11","12","13","14","15"),
+            )
          ),
          array(
             "type" => "dropdown",
@@ -62,7 +78,11 @@ vc_map( array(
                 '9 Seconds' => '9000',
                 '10 Seconds' => '10000'
             ),
-            "description" => __( "", "my-text-domain" )
+            "description" => __( "", "my-text-domain" ),
+			 "dependency" => array (
+                'element' => "count",
+                'value' => array("2","3","4","5","6","7","8","9","10","11","12","13","14","15"),
+            )
          ),
          array(
             "type" => "dropdown",
@@ -73,7 +93,11 @@ vc_map( array(
                 'yes' => 'true',
                 'no' => 'false'
             ),
-            "description" => __( "", "my-text-domain" )
+            "description" => __( "", "my-text-domain" ),
+			 "dependency" => array (
+                'element' => "count",
+                'value' => array("2","3","4","5","6","7","8","9","10","11","12","13","14","15"),
+            )
          ),
          array(
             "type" => "dropdown",
@@ -84,7 +108,11 @@ vc_map( array(
                 'yes' => 'true',
                 'no' => 'false'
             ),
-            "description" => __( "", "my-text-domain" )
+            "description" => __( "", "my-text-domain" ),
+			 "dependency" => array (
+                'element' => "count",
+                'value' => array("2","3","4","5","6","7","8","9","10","11","12","13","14","15"),
+            )
          )
       )
    ) );
